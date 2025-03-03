@@ -1,0 +1,15 @@
+.sign-up-login-bg-img{
+    background-image: url(../src/assets/login-signup-bg-img.jpg);
+}
+
+.home-banner-bg-img{
+    background-image: url(../src//assets/home-banner.jpg);
+}
+
+.vendor-registration-bg-img{
+    background-image: url(../src//assets/vendor-registration-bg-img.jpg);
+}
+
+a:active hr{
+    display: block;
+}
