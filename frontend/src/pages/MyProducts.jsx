@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom'
 import { backendURL } from '../config/Config'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIndianRupee, faPen, faPenAlt, faPenClip, faTrash } from '@fortawesome/free-solid-svg-icons'
+import ProductsListing from '../components/ui-components/ProductsListing'
 
 const MyProducts = () => {
 
@@ -32,7 +33,7 @@ const MyProducts = () => {
     }
     fetchMyProducts()
   }, [token, params.authId]);
-  console.log(myProducts);
+  console.log(params.authId);
   
 
   return (
@@ -46,6 +47,7 @@ const MyProducts = () => {
               <div className='space-y-5'>
                 <h1>My Products</h1>
                 <div className=''>
+                  <ProductsListing products={myProducts} authId={params.authId} role={params.role} />
                 </div>
               </div>
             </div>

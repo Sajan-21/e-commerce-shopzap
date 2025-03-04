@@ -12,7 +12,7 @@ import Categories from './pages/Categories';
 function App() {
 
   return (
-    <div className='p-5 bg-blue-50 overflow-x-hidden'>
+    <div className='p-5 bg-blue-50'>
       <ToastContainer
         position="top-right"
         autoClose={2000}

@@ -14,6 +14,7 @@ import UpdateProfile from './pages/UpdateProfile';
 import MyOrders from './pages/MyOrders';
 import MyProducts from './pages/MyProducts';
 import AddProduct from './pages/AddProduct';
+import ProductOverview from './pages/ProductOverview';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/collections/:role/:authId' element={<Collections />} />
           <Route path='/about' element={<About />} />
           <Route path='/about/:role/:authId' element={<About />} />
+          <Route path='/product-overview/:productId/:role/:authId' element={<ProductOverview />} />
           <Route path='/cart/:role/:authId' element={<Cart />} />
           <Route path='/wish-list/:role/:authId' element={<WishList />} />
           <Route path='/profile/:role/:authId' element={<Profile />} />

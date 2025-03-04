@@ -1,5 +1,5 @@
 import express from "express";
-import { addProduct, addCategory, addSubCategory, getCategories, getSubCategory, vendorProducts } from "../controllers/product-controllers.js";
+import { addProduct, addCategory, addSubCategory, getCategories, getSubCategory, vendorProducts, deleteProduct } from "../controllers/product-controllers.js";
 import upload from "../middlewares/multer.js";
 const router = express.Router();
 
@@ -9,5 +9,6 @@ router.get('/get-categories',getCategories);
 router.post('/add-sub-category',addSubCategory);
 router.get('/get-sub-categories/:categoryId',getSubCategory);
 router.get('/vendor-product/:vendorId',vendorProducts);
+router.delete('/delete-product/:productId',deleteProduct);
 
 export default router;

@@ -23,14 +23,8 @@ export const addProduct = async function(req, res) {
                 return result.secure_url
             })
         )
-
-        console.log("category : ",category);
         
-        console.log("subCategory : ",subCategory);
-        
-        let subCategoryCollection = await subCategoryModel.findById( new mongoose.Types.ObjectId(subCategory) ).populate('category');
-        console.log(subCategoryCollection);
-        
+        let subCategoryCollection = await subCategoryModel.findById( new mongoose.Types.ObjectId(subCategory) ).populate('category');       
 
         const productData = {
             name,
@@ -43,7 +37,6 @@ export const addProduct = async function(req, res) {
             vendor: vendorId,
             permission: true
         }
-        console.log("productData : ",productData);
 
         const product = new productModel(productData);
         await product.save();
@@ -230,5 +223,23 @@ export const vendorProducts = async function (req, res) {
     } catch (error) {
         console.log("error in vendorProducts : ", error);
 
+    }
+}
+
+export const deleteProduct = async function(req, res) {
+    try {
+        let productId = req.params.productId;
+        let deleteProduct = await productModel.deleteOne({_id: productId});
+
+        res.status(200).json({
+            success: true,
+            message: "product deleted successfully"
+        });
+    } catch (error) {
+        console.log("error in deleteProduct : ",error);
+        res.status(500).json({
+            success: false,
+            message: error.message || error
+        });
     }
 }
